@@ -40,4 +40,700 @@
       margin:0;
       background: var(--bg);
       color: var(--text);
-      font-family: Inter, system-ui, -apple-system,
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+    }
+
+    a{ color: inherit; text-decoration: none; }
+    .container{ max-width: var(--max); margin: 0 auto; padding: 0 22px; }
+
+    /* Top bar */
+    .topbar{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,0.82);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 18px;
+    }
+
+    /* Logo */
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width: 260px;
+    }
+    .mark{
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: var(--text);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow: 0 10px 22px rgba(11,15,20,0.18);
+    }
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      line-height:1.1;
+    }
+    .brand-text strong{
+      font-family: Manrope, Inter, sans-serif;
+      letter-spacing: -0.4px;
+      font-size: 14px;
+    }
+    .brand-text span{
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Nav */
+    .nav{
+      display:flex;
+      gap: 18px;
+      align-items:center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .nav a{
+      font-size: 13px;
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 10px;
+    }
+    .nav a:hover{ background: var(--surface); color: var(--text); }
+
+    /* Buttons */
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: var(--bg);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 14px;
+      cursor:pointer;
+      transition: transform 0.06s ease, box-shadow 0.2s ease;
+    }
+    .btn:hover{ box-shadow: 0 10px 26px rgba(11,15,20,0.08); transform: translateY(-1px); }
+    .btn.primary{
+      border-color: transparent;
+      background: var(--text);
+      color: #fff;
+    }
+    .btn.accent{
+      border-color: transparent;
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* Hero */
+    .hero{
+      padding: 56px 0 34px;
+      position: relative;
+      overflow:hidden;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+    @media (max-width: 920px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .brand{ min-width: auto; }
+    }
+
+    .hero h1{
+      font-family: Manrope, Inter, sans-serif;
+      font-size: clamp(34px, 3.8vw, 52px);
+      line-height: 1.06;
+      margin: 0 0 14px;
+      letter-spacing: -1.2px;
+    }
+    .hero p{
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 58ch;
+    }
+
+    .hero-cta{
+      display:flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+    .trust{
+      display:flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items:center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .pill{
+      border:1px solid var(--line);
+      background: rgba(246,247,249,0.6);
+      padding: 8px 10px;
+      border-radius: 999px;
+    }
+
+    .card{
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-card{
+      padding: 18px;
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+      min-height: 100%;
+    }
+    .hero-card .mini{
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+      background: var(--surface);
+    }
+    .hero-card h3{
+      margin: 0;
+      font-family: Manrope, Inter, sans-serif;
+      font-size: 16px;
+      letter-spacing: -0.2px;
+    }
+    .hero-card .mini p{
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Sections */
+    section{ padding: 56px 0; }
+    .section-head{
+      display:flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+    .section-head h2{
+      margin:0;
+      font-family: Manrope, Inter, sans-serif;
+      font-size: 28px;
+      letter-spacing: -0.6px;
+    }
+    .section-head p{
+      margin:0;
+      color: var(--muted);
+      max-width: 60ch;
+      font-size: 14px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .grid-2{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 920px){
+      .grid-3, .grid-2{ grid-template-columns: 1fr; }
+    }
+
+    .panel{
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+    .panel h3{
+      margin: 0 0 10px;
+      font-family: Manrope, Inter, sans-serif;
+      font-size: 16px;
+      letter-spacing: -0.2px;
+    }
+    .panel p{ margin: 0; color: var(--muted); font-size: 14px; }
+    .bullets{
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .bullets li{ margin: 6px 0; }
+
+    /* Pricing */
+    .price{
+      display:flex;
+      align-items: baseline;
+      gap: 10px;
+      margin: 10px 0 10px;
+    }
+    .price strong{
+      font-family: Manrope, Inter, sans-serif;
+      font-size: 28px;
+      letter-spacing: -0.8px;
+    }
+    .price span{ color: var(--muted); font-size: 13px; }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Portfolio */
+    .portfolio{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+    }
+    .shot{
+      grid-column: span 4;
+      border-radius: 16px;
+      overflow:hidden;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      min-height: 220px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color: #7b8796;
+      font-size: 13px;
+      position: relative;
+    }
+    .shot img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display:block;
+    }
+    .shot.wide{ grid-column: span 8; min-height: 260px; }
+    @media (max-width: 920px){
+      .shot, .shot.wide{ grid-column: span 12; }
+    }
+
+    /* FAQ */
+    details{
+      border:1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 16px;
+      background: #fff;
+    }
+    details summary{
+      cursor:pointer;
+      font-weight: 600;
+      color: var(--text);
+      list-style: none;
+    }
+    details summary::-webkit-details-marker{ display:none; }
+    details p{ margin: 10px 0 0; color: var(--muted); font-size: 14px; }
+
+    /* Contact */
+    form{
+      display:grid;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    input, textarea{
+      width: 100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      font-size: 14px;
+      font-family: inherit;
+      background: #fff;
+    }
+    textarea{ min-height: 130px; resize: vertical; }
+
+    footer{
+      padding: 30px 0 40px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .fineprint{ color: var(--muted); font-size: 12px; margin-top: 10px; }
+    .muted{ color: var(--muted); }
+  </style>
+
+  <!-- Optional schema (fill in as needed) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Douglas Timian Photography",
+    "url": "https://douglastimianphotography.com/",
+    "description": "Studio headshots and on-site corporate headshots for leaders and teams.",
+    "areaServed": "YOUR_CITY",
+    "sameAs": []
+  }
+  </script>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-inner">
+        <a class="brand" href="#top" aria-label="Douglas Timian Photography">
+          <div class="mark" aria-hidden="true">
+            <!-- Simple DT monogram SVG -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" role="img" aria-label="DT">
+              <path d="M6 7h6v2H10v10H8V9H6V7Z" fill="#fff"/>
+              <path d="M13 7h5.5c1.4 0 2.5 1.1 2.5 2.5v5c0 1.4-1.1 2.5-2.5 2.5H13V7Zm2 2v8h3.3c.4 0 .7-.3.7-.7V9.7c0-.4-.3-.7-.7-.7H15Z" fill="#fff"/>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <strong>Douglas Timian</strong>
+            <span>Studio & On-Site Headshots</span>
+          </div>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <a href="#services">Services</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#portfolio">Work</a>
+          <a href="#process">Process</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact" class="btn primary" style="padding:10px 14px;">Book / Inquire</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <main id="top" class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <h1>Clean studio headshots and on-site corporate headshots that look modern, confident, and real.</h1>
+          <p>
+            A guided, stress-free session with flattering lighting, simple direction, and a polished final image you’ll actually want to use.
+            Studio sessions for individuals. Efficient headshot days for teams.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn accent" href="#contact">Book a studio session</a>
+            <a class="btn" href="#contact">Request an on-site quote</a>
+          </div>
+
+          <div class="trust">
+            <span class="pill">Fast proofing</span>
+            <span class="pill">Natural retouching</span>
+            <span class="pill">Unlimited usage rights</span>
+            <span class="pill">Studio + on-site</span>
+          </div>
+          <p class="fineprint">
+            Serving <strong>YOUR_CITY</strong> (replace this). Travel available for on-site team sessions.
+          </p>
+        </div>
+
+        <div class="card hero-card">
+          <div class="mini">
+            <h3>Studio Headshots</h3>
+            <p>Great for LinkedIn, leadership bios, speakers, founders, and anyone who wants a clean, high-end look.</p>
+          </div>
+          <div class="mini">
+            <h3>On-Site Team Headshot Days</h3>
+            <p>Consistent lighting and background, efficient flow, and a smooth experience for executives and teams.</p>
+          </div>
+          <div class="mini">
+            <h3>What you get</h3>
+            <p>Guided posing, multiple options to choose from, professional retouching, web + print-ready exports.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Services</h2>
+          <p>Two offerings, built like products: a clean studio experience and an on-site headshot system for teams.</p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="panel">
+          <span class="tag">Studio</span>
+          <h3>Studio Headshots</h3>
+          <p>Controlled lighting, clean backgrounds, and calm direction. Designed to make you look confident and approachable.</p>
+          <ul class="bullets">
+            <li>Multiple looks and expressions (not stiff, not overly posed)</li>
+            <li>Proof gallery to choose your favorites</li>
+            <li>Natural retouching (polished, not plastic)</li>
+            <li>Web + print-ready exports</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <span class="tag">On-Site</span>
+          <h3>On-Site Corporate Headshots</h3>
+          <p>A pop-up studio brought to your office or event, optimized for speed, consistency, and executive-ready results.</p>
+          <ul class="bullets">
+            <li>Consistent lighting/background across the team</li>
+            <li>Efficient flow (typically ~10 minutes per person)</li>
+            <li>On-site selection support (optional)</li>
+            <li>Simple delivery: labeled files + consistent crops</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Pricing</h2>
+          <p>Simple packages for individuals. Straightforward tiering for on-site teams (the way corporate buyers expect).</p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="panel">
+          <span class="tag">Studio · Essential</span>
+          <div class="price"><strong>$395</strong><span>individual</span></div>
+          <p>For a clean, professional headshot with minimal fuss.</p>
+          <ul class="bullets">
+            <li>20–30 min session</li>
+            <li>1 look (wardrobe guidance included)</li>
+            <li>Proof gallery + 1 retouched final</li>
+            <li>Delivery in 2–5 business days</li>
+          </ul>
+        </div>
+
+        <div class="panel" style="border-color: rgba(31,75,216,0.35); box-shadow: 0 18px 60px rgba(31,75,216,0.12);">
+          <span class="tag">Studio · Signature</span>
+          <div class="price"><strong>$650</strong><span>most popular</span></div>
+          <p>More variety, more options, more confidence.</p>
+          <ul class="bullets">
+            <li>60 min session</li>
+            <li>2 looks</li>
+            <li>Proof gallery + 2 retouched finals</li>
+            <li>Priority delivery available</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <span class="tag">Executive</span>
+          <div class="price"><strong>$1,200</strong><span>premium</span></div>
+          <p>For leaders who want a higher-end portrait with extra polish.</p>
+          <ul class="bullets">
+            <li>90 min session</li>
+            <li>Up to 3 looks</li>
+            <li>Proof gallery + 4 retouched finals</li>
+            <li>Optional background/lighting variation</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="height: 16px;"></div>
+
+      <div class="grid-3">
+        <div class="panel">
+          <span class="tag">On-Site Teams</span>
+          <div class="price"><strong>$2,250</strong><span>flat rate</span></div>
+          <p>5–10 people (one setup station). This tiering is common in the on-site headshot market. :contentReference[oaicite:2]{index=2}</p>
+          <ul class="bullets">
+            <li>Typically ~10 min per person :contentReference[oaicite:3]{index=3}</li>
+            <li>Consistent lighting/background</li>
+            <li>Includes standard retouching per person</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <span class="tag">On-Site Teams</span>
+          <div class="price"><strong>$3,500</strong><span>flat rate</span></div>
+          <p>11–20 people (one setup station). :contentReference[oaicite:4]{index=4}</p>
+          <ul class="bullets">
+            <li>On-site assistant can manage selections (optional) :contentReference[oaicite:5]{index=5}</li>
+            <li>Standard retouching per person</li>
+            <li>Consistent crops + file naming</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <span class="tag">On-Site Day Rate</span>
+          <div class="price"><strong>$4,500</strong><span>full day</span></div>
+          <p>30+ people (one station). Additional station pricing is often listed for large teams. :contentReference[oaicite:6]{index=6}</p>
+          <ul class="bullets">
+            <li>Up to ~80 people for one station is commonly cited :contentReference[oaicite:7]{index=7}</li>
+            <li>Additional station add-on: $2,500 :contentReference[oaicite:8]{index=8}</li>
+            <li>Best for scheduling constraints</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="fineprint">
+        Notes: On-site pricing varies with travel, complexity, and scheduling. Individuals can also be priced in a “package ladder” style common in NYC studios (e.g., $299 / $499 tiers). :contentReference[oaicite:9]{index=9}
+      </p>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Work</h2>
+          <p>Replace placeholders with your images (recommended: 200–400 KB each for fast load).</p>
+        </div>
+      </div>
+
+      <div class="portfolio">
+        <!-- Option A: placeholders (remove when adding images) -->
+        <div class="shot wide">Add a strong hero headshot</div>
+        <div class="shot">Studio headshot</div>
+        <div class="shot">Studio headshot</div>
+        <div class="shot">On-site headshot</div>
+        <div class="shot wide">Team consistency example</div>
+        <div class="shot">Executive portrait</div>
+
+        <!-- Option B: use images (example)
+        <div class="shot wide"><img src="images/headshot-01.jpg" alt="Studio headshot"></div>
+        -->
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Process</h2>
+          <p>Simple and predictable. No awkward guessing. You’ll know exactly what to do.</p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="panel">
+          <h3>1) Prep</h3>
+          <p>Quick guidance on wardrobe, grooming, and what reads best on camera.</p>
+        </div>
+        <div class="panel">
+          <h3>2) Shoot</h3>
+          <p>Relaxed direction with small adjustments that quickly level up your look.</p>
+        </div>
+        <div class="panel">
+          <h3>3) Select + Retouch</h3>
+          <p>You pick favorites from proofs, then receive polished finals in web + print formats.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>FAQ</h2>
+          <p>Short answers to the questions that slow people down.</p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <details>
+          <summary>What should I wear?</summary>
+          <p>Solid colors, minimal patterns, and one outfit that matches your role. I’ll send a simple checklist after you book.</p>
+        </details>
+
+        <details>
+          <summary>Do you retouch?</summary>
+          <p>Yes. Natural retouching: skin cleanup, under-eye moderation, flyaways. You’ll still look like you.</p>
+        </details>
+
+        <details>
+          <summary>How does on-site team headshots work?</summary>
+          <p>I bring a pop-up studio setup (lights + background) and run an efficient flow, usually around ~10 minutes per person. :contentReference[oaicite:10]{index=10}</p>
+        </details>
+
+        <details>
+          <summary>Can we do multiple locations or setups?</summary>
+          <p>Yes. For large teams, additional stations and setups are typically priced separately. :contentReference[oaicite:11]{index=11}</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Book / Inquire</h2>
+          <p>Send a message and I’ll reply within 24 hours. Email also works: <strong>YOUR_EMAIL@DOMAIN.COM</strong></p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="panel">
+          <h3>Quick message</h3>
+
+          <!--
+            To make this form actually email you (no server needed on GitHub Pages):
+            1) Create a free Formspree account and create a new form.
+            2) Replace the action URL below with your endpoint: https://formspree.io/f/xxxxxxx
+            Formspree docs: build an HTML form + endpoint instructions. :contentReference[oaicite:12]{index=12}
+          -->
+          <form action="https://formspree.io/f/xxxxxxx" method="POST">
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="email" name="email" placeholder="Your email" required />
+            <textarea name="message" placeholder="Tell me what you need (studio or on-site, timing, and number of people)." required></textarea>
+            <button class="btn primary" type="submit">Send</button>
+            <div class="fineprint">Prefer email? Write me at <strong>YOUR_EMAIL@DOMAIN.COM</strong>.</div>
+          </form>
+        </div>
+
+        <div class="panel">
+          <h3>What to include</h3>
+          <ul class="bullets">
+            <li>Studio or on-site</li>
+            <li>Desired date(s)</li>
+            <li>Number of people (for teams)</li>
+            <li>Usage needs (LinkedIn only vs PR/press)</li>
+            <li>Location + any building access notes</li>
+          </ul>
+
+          <div style="height: 12px;"></div>
+          <a class="btn accent" href="mailto:YOUR_EMAIL@DOMAIN.COM?subject=Headshot%20Inquiry%20(Douglas%20Timian%20Photography)">Email me</a>
+          <div class="fineprint muted">Tip: Once you add a few portfolio images, your inquiry rate will jump immediately.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap;">
+      <div>© <span id="year"></span> Douglas Timian Photography</div>
+      <div class="muted">Studio & On-Site Headshots · YOUR_CITY</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
